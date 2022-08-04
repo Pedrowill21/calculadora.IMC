@@ -9,17 +9,20 @@
 <button onclick="calcularImc()">IMC</button>
 <div id = 'output'></div>
 <script>
+    var pessoas = [];
+  
+    
     function calcularImc () {
         var msg = '';
         var user = {};
-        //user.nome = prompt('qual seu nome ?');
-        user.idade = prompt('quantos anos você tem ?');
+        user.nome = prompt('qual seu nome ?');
+        //user.idade = prompt('quantos anos você tem ?');
         user.peso = prompt('qual seu peso em KG ?');
-        user.altura = prompt('qual sua altura em CM ?')
+        user.altura = prompt('qual sua altura em CM ?');
         //console.log(user);
-        var imc = resultimc(user.peso, user.altura);
-        console.log(imc);
-        msg += imc;
+        pessoas.push(user);
+        console.log(pessoas);
+        
         
         var output = document.querySelector('#output').innerHTML = msg;
 
