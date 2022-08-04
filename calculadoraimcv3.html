@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>saiba seu peso ideal</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<h1>Calculadora IMC</h1>
+<button onclick="calcularImc()">IMC</button>
+<div id = 'output'></div>
+<script>
+    function calcularImc () {
+        var msg = '';
+        var user = {};
+        //user.nome = prompt('qual seu nome ?');
+        //user.idade = prompt('quantos anos você tem ?');
+        user.peso = prompt('qual seu peso em KG ?');
+        user.altura = prompt('qual sua altura em CM ?')
+        //console.log(user);
+        var imc = resultimc(user.peso, user.altura);
+        console.log(imc);
+        msg += imc;
+        
+        var output = document.querySelector('#output').innerHTML = msg;
+
+        
+    }
+
+    function resultimc (peso, altura) {
+        altura = altura * altura;
+        var ncalculado = peso / altura;
+        ncalculado = ncalculado * 10000
+        ncalculado  = parseInt(ncalculado)
+        
+        return ncalculado;
+         }
+       
+
+       
+</script>
+</body>
+</html>
